@@ -27,15 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add a comment
-    commentButton.addEventListener('click', () => {
-        const comment = commentInput.value.trim();
-        if (comment) {
-            const listItem = document.createElement('li');
-            listItem.textContent = comment;
-            commentsList.appendChild(listItem);
-            commentInput.value = ''; // Clear the input
+commentButton.addEventListener('click', async () => {
+    const comment = commentInput.value.trim();
+    if (comment) {
+        const listItem = document.createElement('li');
+        listItem.textContent = comment;
+        commentsList.appendChild(listItem);
+        
+        // Send comment to JSON server
+        try {
+            await fetch('http://localhost:3000/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ comment })
+            });
+        } catch (error) {
+            console.error('Error saving comment:', error);
         }
-    });
+
+        commentInput.value = ''; // Clear the input
+    }
+});
+
 
     // Fetch a duck when the page loads
     fetchDuck();
