@@ -6,55 +6,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentsList = document.getElementById('comments-list');
     const commentInput = document.getElementById('comment-input');
     const commentButton = document.getElementById('comment-button');
+    const toggleThemeButton = document.getElementById('toggle-theme');
 
     let likes = 0;
 
-    // Fetch a random duck image
+    // Fetch and display a random duck image
     const fetchDuck = async () => {
         try {
             const response = await fetch('https://random-d.uk/api/v2/random');
             const data = await response.json();
-            duckImage.src = data.url;
+            duckImage.src = "https://www.reddit.com/user/brazilliandude21/comments/yckg4c/20_random_ducks/?rdt=54277"
         } catch (error) {
             console.error('Error fetching duck:', error);
         }
     };
 
-    // Like the duck
+    // Increment like count
     likeButton.addEventListener('click', () => {
-        likes += 1;
-        likeCount.textContent = likes;
+        likes++;
+        likeCount.textContent = likes; // Update displayed like count
     });
 
     // Add a comment
-commentButton.addEventListener('click', async () => {
-    const comment = commentInput.value.trim();
-    if (comment) {
-        const listItem = document.createElement('li');
-        listItem.textContent = comment;
-        commentsList.appendChild(listItem);
-        
-        // Send comment to JSON server
-        try {
-            await fetch('http://localhost:3000/comments', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ comment })
-            });
-        } catch (error) {
-            console.error('Error saving comment:', error);
+    commentButton.addEventListener('click', () => {
+        const comment = commentInput.value.trim();
+        if (comment) {
+            const listItem = document.createElement('li');
+            listItem.textContent = comment; // Create new comment
+            commentsList.appendChild(listItem); // Add comment to list
+            commentInput.value = ''; // Clear input field
         }
+    });
 
-        commentInput.value = ''; // Clear the input
-    }
-});
-
-
-    // Fetch a duck when the page loads
+    // Fetch a duck on page load
     fetchDuck();
 
-    // Fetch another duck when button is clicked
+    // Fetch another duck
     fetchDuckButton.addEventListener('click', fetchDuck);
+
+    // Toggle dark/light mode
+    toggleThemeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
 });

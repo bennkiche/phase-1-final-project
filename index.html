@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duck SPA</title>
+    <title>Duck Gallery SPA</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Duck Viewer</h1>
+    <h1>Duck Gallery</h1>
     <div id="duck-container">
-        <img id="duck-image" src="" alt="A cute duck">
-        <div id="duck-details">
+        <img id="duck-image" src="https://www.reddit.com/user/brazilliandude21/comments/yckg4c/20_random_ducks/?rdt=54277" alt="Random Duck" />
+        <div>
             <button id="like-button">Like</button>
             <span id="like-count">0</span>
         </div>
         <div>
             <h2>Comments</h2>
             <ul id="comments-list"></ul>
-            <input type="text" id="comment-input" placeholder="Add a comment">
+            <input type="text" id="comment-input" placeholder="Add a comment" />
             <button id="comment-button">Submit Comment</button>
         </div>
         <button id="fetch-duck">Fetch Another Duck</button>
+        <button id="toggle-theme">Toggle Dark/Light Mode</button>
     </div>
     <script src="index.js"></script>
 </body>

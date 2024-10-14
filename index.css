@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
 }
 
 #duck-container {
@@ -15,4 +19,15 @@ img {
 
 button {
     margin: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode button {
+    background-color: white;
+    color: black;
 }
