@@ -1,4 +1,16 @@
+const baseUrl = "http://localhost:5501"
 document.addEventListener('DOMContentLoaded', () => {
+    async function getData(){
+        try {
+            let response = await fetch(baseUrl)
+            let data =  await response.json()
+            data.forEach(duck => {
+                displayDuck(duck)
+        })
+        }catch(err){
+            console.log(err)
+        }
+    }
     const duckImage = document.getElementById('duck-image');
     const likeButton = document.getElementById('like-button');
     const likeCount = document.getElementById('like-count');
@@ -15,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('https://random-d.uk/api/v2/random');
             const data = await response.json();
-            duckImage.src = "https://www.reddit.com/user/brazilliandude21/comments/yckg4c/20_random_ducks/?rdt=54277"
+            duckImage.src = "${duck.image_url}"
         } catch (error) {
             console.error('Error fetching duck:', error);
         }
@@ -49,3 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode');
     });
 });
+
+let addForm = document.getElementById("add-form")
+addForm.addEventListener("submit",(e) =>{
+    e.preventDefault()
+    let formData = new FormData(e.target)
+    let foodObj = {
+        name:formData.get("name"),
+        image_url: formData.get("image")
+    }
+   
+    fetch(baseUrl,{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(duckObj)
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(`${data.name} created successfully`)
+    })
+    .catch(err => console.log(err))
+})

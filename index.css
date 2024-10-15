@@ -1,10 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: bisque;
     text-align: center;
     margin: 0;
-    padding: 0;
-    background-color: white;
+    padding: 10px;
     color: black;
+    background-color: beige;
+    border: 1px solid black;
+    width: 400px;
+    height: 550px;
+    border-radius: 5px;
 }
 
 #duck-container {
@@ -30,4 +34,13 @@ body.dark-mode {
 .dark-mode button {
     background-color: white;
     color: black;
+}
+#image {
+    width: 350px;
+}
+#foods-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
 }
