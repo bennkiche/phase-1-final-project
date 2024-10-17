@@ -8,30 +8,22 @@
 </head>
 <body>
     <h1>Duck Gallery</h1>
-    <div id="duck-container">
-        <img id="duck-image" src="https://www.reddit.com/user/brazilliandude21/comments/yckg4c/20_random_ducks/?rdt=54277" alt="Random Duck" />
-        <div>
-            <button id="like-button">Like</button>
-            <span id="like-count">0</span>
-            <form id="add-form">
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" required>
-                <label for="image">Image: </label>
-                <input type="url" id="image" name="image" required>
-                <button>Add Duck</button>
-            </form>
-            <div id="Duck-div">
+    <div id="duck-div"></div>
+    <img id="duck-image" src="" alt="Random Duck">
+    <button id="fetch-duck">Fetch Duck</button>
+    <button id="like-button">Like</button>
+    <span id="like-count">0</span>
+    <input type="text" id="comment-input">
+    <button id="add-duck-button">Add Duck</button>
+    <button id="comment-button">Add Comment</button>
+    <ul id="comments-list"></ul>
+    <button id="toggle-theme">Toggle Theme</button>
+    <form id="add-form">
+        <input type="text" name="name" placeholder="Duck Name" required>
+        <input type="url" name="image" placeholder="Duck Image URL" required>
+    </form>
+    <div id="duck-div"></div>
                 <!-- add duck types here -->
-        </div>
-        <div>
-            <h2>Comments</h2>
-            <ul id="comments-list"></ul>
-            <input type="text" id="comment-input" placeholder="Add a comment" />
-            <button id="comment-button">Submit Comment</button>
-        </div>
-        <button id="fetch-duck">Fetch Another Duck</button>
-        <button id="toggle-theme">Toggle Dark/Light Mode</button>
-    </div>
     <script src="./index.js"></script>
 </body>
 </html>

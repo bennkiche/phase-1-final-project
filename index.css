@@ -38,7 +38,7 @@ body.dark-mode {
 #image {
     width: 350px;
 }
-#foods-div {
+#ducks-div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
