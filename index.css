@@ -1,21 +1,23 @@
 body {
-    font-family: bisque;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 10px;
-    color: black;
-    background-color: beige;
-    border: 1px solid black;
-    border-radius: 5px;
+    color: #333;
+    background-color: #f8f5f2; /* Soft beige background for a warm look */
 }
 
-/* Adjust the overall container to be more flexible */
+/* Overall container to be flexible and centered */
 #duck-container {
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure each duck is evenly spaced and responsive */
+/* Duck cards styling */
 #duck-div {
     display: flex;
     flex-wrap: wrap;
@@ -24,45 +26,76 @@ body {
     padding: 10px;
 }
 
-/* Duck cards styling */
 .duck-div {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    width: 200px; /* Adjust width for each duck card */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    padding: 15px;
+    width: 220px; /* Slightly larger for better visual impact */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for duck cards */
+.duck-div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Ensure images are responsive */
 .duck-div img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* Center content within each duck card */
-.duck-div p, .like-section, .comments-section {
+.duck-div p {
+    font-weight: bold;
+    color: #444;
+    margin: 5px 0;
+}
+
+.like-section, .comments-section {
     text-align: center;
 }
 
 /* Button styles */
 button {
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background-color: #ff7f50; /* Coral color for an inviting look */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e66b3c; /* Slightly darker coral on hover */
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #333;
-    color: white;
+    background-color: #222;
+    color: #f1f1f1;
 }
 
 .dark-mode button {
-    background-color: white;
-    color: black;
+    background-color: #444;
+    color: #f1f1f1;
+}
+
+/* Dark mode duck cards */
+body.dark-mode .duck-div {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+.dark-mode .duck-div p {
+    color: #f1f1f1;
 }
 
 /* Ensure images inside the #image container are responsive */
@@ -70,4 +103,54 @@ body.dark-mode {
     width: 100%;
     max-width: 350px;
     border-radius: 8px;
+}
+
+/* Styling for the add form */
+#add-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+#add-form input[type="text"],
+#add-form input[type="url"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Focus effect for inputs */
+#add-form input[type="text"]:focus,
+#add-form input[type="url"]:focus {
+    border-color: #ff7f50; /* Coral color for focus */
+    outline: none;
+}
+
+/* Improved comment button */
+.comment-button {
+    background-color: #ff7f50; /* Matching coral theme */
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin-top: 5px;
+}
+
+/* Like section button style adjustments */
+.like-button {
+    background-color: #ffc107; /* Soft yellow to avoid blue */
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.like-button:hover {
+    background-color: #e0a800;
 }
