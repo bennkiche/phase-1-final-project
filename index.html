@@ -8,22 +8,23 @@
 </head>
 <body>
     <h1>Duck Gallery</h1>
-    <div id="duck-div"></div>
-    <img id="duck-image" src="" alt="Random Duck">
-    <button id="fetch-duck">Fetch Duck</button>
     <button id="like-button">Like</button>
     <span id="like-count">0</span>
-    <input type="text" id="comment-input">
-    <button id="add-duck-button">Add Duck</button>
-    <button id="comment-button">Add Comment</button>
     <ul id="comments-list"></ul>
     <button id="toggle-theme">Toggle Theme</button>
+    
     <form id="add-form">
-        <input type="text" name="name" placeholder="Duck Name" required>
-        <input type="url" name="image" placeholder="Duck Image URL" required>
+        <input type="text" id="name" name="name" placeholder="Duck Name" required>
+        <input type="url" id='image' name="image" placeholder="Duck Image URL" required>
+        <button type="button" id="add-duck-button">Add Duck</button>
+        <input type="text" id="comment" placeholder="Add a comment...">
+        <button type="button" id="comment-button">Add Comment</button>
     </form>
+
     <div id="duck-div"></div>
-                <!-- add duck types here -->
+
+    <img id="duck-image" src="" alt="Random Duck">
+
     <script src="./index.js"></script>
 </body>
 </html>
