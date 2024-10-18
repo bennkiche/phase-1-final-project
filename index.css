@@ -6,23 +6,52 @@ body {
     color: black;
     background-color: beige;
     border: 1px solid black;
-    width: 400px;
-    height: 550px;
     border-radius: 5px;
 }
 
+/* Adjust the overall container to be more flexible */
 #duck-container {
+    max-width: 1200px; /* Adjust as needed */
     margin: 20px auto;
-    width: 300px;
 }
 
-img {
+/* Ensure each duck is evenly spaced and responsive */
+#duck-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Duck cards styling */
+.duck-div {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px; /* Adjust width for each duck card */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure images are responsive */
+.duck-div img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
+/* Center content within each duck card */
+.duck-div p, .like-section, .comments-section {
+    text-align: center;
+}
+
+/* Button styles */
 button {
     margin: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Dark mode styles */
@@ -35,12 +64,10 @@ body.dark-mode {
     background-color: white;
     color: black;
 }
+
+/* Ensure images inside the #image container are responsive */
 #image {
-    width: 350px;
-}
-#ducks-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
 }
